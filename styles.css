@@ -1,0 +1,133 @@
+.header {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+    position: fixed;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.header > nav > a {
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+nav h3 {
+    margin: 0;
+    align-self: start;
+    margin-right: 45%;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 40px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav h3 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav h3 a:hover {
+    color: #D80032;
+}
+
+nav ul li a:hover {
+    color: #D80032;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    background-color: #202128;
+    flex: 1 1 auto;
+    height: 100%;
+    width: 100%;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+}
+
+.table-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    margin-top: 7%;
+    margin-left: 25%;
+    margin-right: 10%;
+    height: 75%;
+    width: 50%;
+}
+
+.table-container div {
+    margin: auto;
+    background-color: #333;
+    text-align: center;
+    width: 80%;
+    height: 90%;
+}
+
+.table-container div {
+    display: flex;
+    justify-content: center;
+    width: 130px;
+    height: 190px;
+    border-radius: 5%;
+    background-image: url("resources/oblojka_sample.png");
+    margin-bottom: 25px;
+}
+
+.span-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    transform: translate3d(0, 1px, 0);
+    opacity: 0;
+    transition: 0.3s all ease-in-out;
+}
+
+.span-container span {
+    align-self: flex-end;
+    width: 100%;
+    background: rgb(149,149,149);
+    background: linear-gradient(0deg, rgba(149,149,149,1) 0%, rgba(255,255,255,1) 100%);
+    border-radius: 5%;
+}
+
+.span-container:hover {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
