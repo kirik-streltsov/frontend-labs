@@ -131,3 +131,21 @@ html, body {
     transform: translate3d(0, 0, 0);
     opacity: 1;
 }
+
+section {
+    margin-left: 2%;
+    color: #fff;
+}
+
+.description {
+    margin-top: 5%;
+}
+
+section a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section a:hover {
+    color: #D80032;
+}
