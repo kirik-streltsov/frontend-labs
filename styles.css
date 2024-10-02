@@ -8,6 +8,8 @@
     padding: 15px 0;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    z-index: 1;
 }
 
 .header > nav > a {
@@ -120,6 +122,7 @@ html, body {
     opacity: 0;
     transition: 0.3s all ease-in-out;
     font-family: "Open Sans", serif;
+    font-style: italic;
     line-height: 50px;
 }
 
@@ -129,6 +132,7 @@ html, body {
     background: rgb(149,149,149);
     background: linear-gradient(0deg, rgba(149,149,149,1) 0%, rgba(255,255,255,1) 100%);
     border-radius: 5%;
+    text-transform: capitalize;
 }
 
 .span-container:hover {
@@ -142,7 +146,7 @@ section {
 }
 
 .description {
-    margin-top: 5%;
+    margin-top: 70px;
 }
 
 section a {
@@ -152,4 +156,28 @@ section a {
 
 section a:hover {
     color: #D80032;
+}
+
+@media screen and (width < 700px) {
+    .table-container {
+        display: grid;
+        grid-template-columns: repeat(2, 130px) !important;
+        grid-template-rows: repeat(6, 190px) !important;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 100px;
+        height: 100%;
+        width: 100%;
+    }
+
+    body {
+        background-color: #202128;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (width <= 390px) {
+    .description {
+        margin-top: 150px;
+    }
 }
