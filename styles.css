@@ -165,7 +165,7 @@ section a:hover {
         grid-template-rows: repeat(6, 190px) !important;
         justify-content: center;
         gap: 30px;
-        margin-top: 100px;
+        margin-top: 150px;
         height: 100%;
         width: 100%;
     }
@@ -173,6 +173,11 @@ section a:hover {
     body {
         background-color: #202128;
         overflow-y: scroll;
+    }
+
+    .header li {
+        display: flex;
+        flex-direction: column;
     }
 }
 
