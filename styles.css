@@ -184,10 +184,11 @@ section a:hover {
         display: flex;
         flex-direction: column;
     }
-    
+
     nav h3 {
         display: block;
         height: 100%;
+        align-self: center;
     }
 }
 
