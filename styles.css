@@ -44,6 +44,12 @@ nav ul li a {
     box-shadow: #D80032;
 }
 
+nav h3 {
+    display: block;
+    height: 100%;
+    align-self: center;
+}
+
 nav h3 a {
     color: #fff;
     text-decoration: none;
