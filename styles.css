@@ -195,3 +195,9 @@ section a:hover {
         margin-top: 150px;
     }
 }
+
+@media screen and (width < 250px) {
+    nav h3 {
+        display: none;;
+    }
+}
