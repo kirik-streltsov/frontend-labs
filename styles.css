@@ -170,14 +170,15 @@ section a:hover {
     grid-template-rows: repeat(5, 1fr);
 }
 
-.grid-container-demo div {
+.grid-container-demo th {
     color: #fff;
 }
 
-.grid-container-demo div:nth-child(8n-2), 
-.grid-container-demo div:nth-child(8n-1), 
-.grid-container-demo div:nth-child(8n), 
-.grid-container-demo div:nth-child(8n+1) {
+.grid-container-demo td {
+    color: #fff;
+}
+
+.grid-container-demo tr:nth-child(even) {
     background-color: #D80032;
 }
 
@@ -203,8 +204,8 @@ section a:hover {
     }
 
     .header li {
-        display: flex;
-        flex-direction: column;
+        display: block;
+        margin: 8px
     }
 
     .header ul {
@@ -231,7 +232,7 @@ section a:hover {
     }
 
     .grid-container-demo {
-        margin-top: 170px;
+        margin-top: 220px;
     }
 }
 
@@ -250,7 +251,7 @@ section a:hover {
         grid-template-rows: repeat(12, 190px) !important;
         justify-content: center;
         gap: 30px;
-        margin-top: 170px;
+        margin-top: 220px;
         height: 100%;
         width: 100%;
     }
