@@ -159,6 +159,18 @@ section a {
     text-decoration: none;
 }
 
+.grid-container-demo div:nth-child(even) {
+    background-color: #D80032;
+}
+
+tbody, tr {
+    display: contents;
+}
+
+td {
+    justify-self: center;
+}
+
 section a:hover {
     color: #D80032;
 }
@@ -176,10 +188,6 @@ section a:hover {
 
 .grid-container-demo td {
     color: #fff;
-}
-
-.grid-container-demo tr:nth-child(even) {
-    background-color: #D80032;
 }
 
 .title-grid {
