@@ -190,9 +190,7 @@ section a:hover {
         height: 100%;
         align-self: center;
     }
-}
 
-@media screen and (width <= 390px) {
     .description {
         margin-top: 150px;
     }
