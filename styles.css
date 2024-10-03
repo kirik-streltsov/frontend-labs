@@ -159,7 +159,7 @@ section a {
     text-decoration: none;
 }
 
-.grid-container-demo div:nth-child(even) {
+.grid-container-demo tr:nth-child(even) td {
     background-color: #D80032;
 }
 
