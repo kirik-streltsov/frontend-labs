@@ -198,6 +198,17 @@ section a:hover {
 
 @media screen and (width < 250px) {
     nav h3 {
-        display: none;;
+        display: none;
+    }
+
+    .table-container {
+        display: grid;
+        grid-template-columns: repeat(1, 130px) !important;
+        grid-template-rows: repeat(12, 190px) !important;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 150px;
+        height: 100%;
+        width: 100%;
     }
 }
