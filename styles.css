@@ -92,8 +92,8 @@ html, body {
 
 .table-container {
     display: grid;
-    grid-template-columns: repeat(4, 130px);
-    grid-template-rows: repeat(3, 190px);
+    grid-template-columns: repeat(auto-fill, 130px);
+    grid-template-rows: repeat(auto-fill, 190px);
     justify-content: center;
     gap: 30px;
     margin-top: 100px;
@@ -163,6 +163,28 @@ section a:hover {
     color: #D80032;
 }
 
+.grid-container-demo {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.grid-container-demo div {
+    color: #fff;
+}
+
+.grid-container-demo div:nth-child(8n-2), 
+.grid-container-demo div:nth-child(8n-1), 
+.grid-container-demo div:nth-child(8n), 
+.grid-container-demo div:nth-child(8n+1) {
+    background-color: #D80032;
+}
+
+.title-grid {
+    background-color: #333 !important;
+}
+
 @media screen and (width < 700px) {
     .table-container {
         display: grid;
@@ -170,7 +192,7 @@ section a:hover {
         grid-template-rows: repeat(6, 190px) !important;
         justify-content: center;
         gap: 30px;
-        margin-top: 150px;
+        margin-top: 170px;
         height: 100%;
         width: 100%;
     }
@@ -185,21 +207,42 @@ section a:hover {
         flex-direction: column;
     }
 
+    .header ul {
+        display: block;
+        align-self: center;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
     nav h3 {
         display: block;
         height: 100%;
         align-self: center;
     }
 
+    nav h3 a {
+        left: 0;
+    }
+
     .description {
-        margin-top: 150px;
+        margin-top: 170px;
+    }
+
+    .grid-container-demo {
+        margin-top: 170px;
     }
 }
 
 @media screen and (width < 250px) {
-    nav h3 {
-        display: none;
+    nav {
+        align-self: center;
     }
+
+    /* nav h3 {
+        display: none;
+    } */
 
     .table-container {
         display: grid;
@@ -207,7 +250,7 @@ section a:hover {
         grid-template-rows: repeat(12, 190px) !important;
         justify-content: center;
         gap: 30px;
-        margin-top: 150px;
+        margin-top: 170px;
         height: 100%;
         width: 100%;
     }
