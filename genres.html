@@ -8,6 +8,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script type="text/javascript">
+        var before_loadtime = new Date().getTime();
+        window.onload = () => {
+            var aftr_loadtime = new Date().getTime();
+            pgloadtime = (aftr_loadtime - before_loadtime) / 1000
+   
+            document.getElementById("load_time").innerHTML = "Page load time is <b>" + pgloadtime + "</b> Seconds";
+        }
+   </script>
 </head>
 <body>
     <div class="container">
@@ -15,13 +24,14 @@
             <nav>
                 <h3><a href="index.html">Mangadrill</a></h3>
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="#">Новинки</a></li>
-                    <li><a href="genres.html">Жанры</a></li>
-                    <li><a href="about.html">О сайте</a></li>
-                    <li><a href="#">Аккаунт</a></li>
+                    <li><a class="menu_item" href="index.html">Главная</a></li>
+                    <li><a class="menu_item" href="#">Новинки</a></li>
+                    <li><a class="menu_item" href="genres.html">Жанры</a></li>
+                    <li><a class="menu_item" href="about.html">О сайте</a></li>
+                    <li><a class="menu_item" href="#">Аккаунт</a></li>
                 </ul>
             </nav>
+            <script src="./scripts/active.js"></script>
         </div>
         <div class="content">
             <table class="grid-container-demo">
@@ -54,6 +64,7 @@
                     <td>Test</td>
                 </tr>
             </table>
+            <div class="load_time_container"><span id="load_time"></span></div>
         </div>
 </body>
 </html>
