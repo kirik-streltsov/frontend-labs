@@ -14,5 +14,6 @@ for (let item of menuItems) {
         let main = document.getElementById('main')
         main.classList.remove('menu_item')
         main.classList.add('menu_item_active')
+        break
     }
 }
