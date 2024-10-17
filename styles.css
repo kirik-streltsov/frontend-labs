@@ -121,10 +121,18 @@ html, body {
 .table-container div {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     width: 130px;
     height: 190px;
     border-radius: 5%;
-    background-image: url("resources/oblojka_sample.png");
+    /* background-image: url("resources/oblojka_sample.png"); */
+}
+
+.table-container div img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    object-fit: cover;
 }
 
 .span-container {
@@ -140,17 +148,26 @@ html, body {
 }
 
 .span-container span {
-    align-self: flex-end;
+    /* align-self: flex-end; */
     width: 100%;
-    background: rgb(149,149,149);
-    background: linear-gradient(0deg, rgba(149,149,149,1) 0%, rgba(255,255,255,1) 100%);
+    color: #fff;
+    /* background: rgb(149,149,149); */
+    background: linear-gradient(0deg, rgb(78, 78, 78) 0%, rgba(255,255,255,0) 100%);
     border-radius: 5%;
     text-transform: capitalize;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    top: -50px;
 }
 
 .span-container:hover {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+    z-index: 1;
 }
 
 section {
