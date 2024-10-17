@@ -10,9 +10,10 @@ for (let item of menuItems) {
         item.classList.remove('menu_item')
         item.classList.add('menu_item_active')
         break
-    } else if (currFile.endsWith('frontend-labs/')) {
+    } else if (currFile == 'https://kirik-streltsov.github.io/frontend-labs/') {
         let main = document.getElementById('main')
         main.classList.remove('menu_item')
         main.classList.add('menu_item_active')
+        break
     }
 }
