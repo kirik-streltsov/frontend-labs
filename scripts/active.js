@@ -1,4 +1,5 @@
 const currLocationItems = document.location.href.split('/')
+console.log(document.location.href)
 const currFile = currLocationItems[currLocationItems.length - 1]
 
 const menuItems = document.getElementsByClassName('menu_item')
