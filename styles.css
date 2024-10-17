@@ -116,6 +116,8 @@ html, body {
     text-align: center;
     width: 80%;
     height: 90%;
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .table-container div {
@@ -129,13 +131,14 @@ html, body {
 }
 
 .table-container div img {
-    width: 100%;
-    height: 100%;
+    width: 130px !important;
+    height: 190px !important;
     border-radius: 5%;
     object-fit: cover;
 }
 
 .span-container {
+    display: hidden;
     width: 100%;
     height: 100%;
     border-radius: 5%;
@@ -145,6 +148,7 @@ html, body {
     font-family: "Open Sans", serif;
     font-style: italic;
     line-height: 50px;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .span-container span {
