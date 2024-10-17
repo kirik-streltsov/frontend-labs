@@ -114,17 +114,16 @@ html, body {
     margin: auto;
     background-color: #333;
     text-align: center;
-    display: block;
     background-color: rgba(0, 0, 0, 0);
 }
 
 .table-container div {
-    display: flex;
     justify-content: center;
     flex-direction: column;
     width: 130px;
     height: 190px;
     border-radius: 5%;
+    display: block;
     /* background-image: url("resources/oblojka_sample.png"); */
 }
 
@@ -163,7 +162,7 @@ html, body {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    top: -50px;
+    top: -55px;
 }
 
 .span-container:hover {
