@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-        <script src="scripts/load_time.js"></script>
+        <script src="scripts/notes.js"></script>
     </head>
     <body>
         <div class="container">
@@ -27,6 +27,17 @@
                 <script src="./scripts/active.js"></script>
             </div>
             <div class="content">
+                <h3 class="notes-header">Страницы аккаунта здесь пока нет, но зато можно делать прикольные заметки :)</h3>
+                <hr color="#fff"/>
+                <div class="form-container">
+                    <form id="note-form" onsubmit="createNote();return false">
+                        <div id="input">
+                            <input id="note-input" type="text" placeholder="Напиши заметочку">
+                        </div>
+                        <input id="note-submit" type="submit" value="✔">
+                    </form>
+                </div>
+                <div id="notes-container"></div>
             </div>
         </div>
     </body>
