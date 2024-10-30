@@ -233,6 +233,111 @@ section a:hover {
     color: #D80032;
 }
 
+.notes-header {
+    color: #fff;
+    text-align: center;
+    margin-top: 125px;
+}
+
+hr {
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 8px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-top: 10px;
+}
+
+#input {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 48px;
+    width: 450px;
+    height: 40px;
+}
+
+#note-input {
+    all: unset;
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: inherit;
+    color: #fff;
+    font-weight: 500;
+}
+
+#notes-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#notes-container div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: space-between;
+    align-self: center;
+    word-break: break-word;
+    width: 550px;
+    height: auto;
+    background-color: #333;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+#notes-container div p {
+    margin-left: 10px;
+}
+
+#notes-container button {
+    all: unset;
+    min-width: 40px;
+    align-self: right;
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: #D80032;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#note-submit {
+    all: unset;
+    margin-left: 10px;
+    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#delete-all {
+    all: unset;
+    background-color: #D80032;
+    text-align: center;
+    margin-left: 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 500;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 @media screen and (width < 700px) {
     .table-container {
         justify-content: center;
