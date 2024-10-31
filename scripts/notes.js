@@ -2,16 +2,6 @@ let noteID = 1
 let count = 0
 let first = true
 
-removeFromStorageById = (id) => {
-    for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i)
-        if (key == id) {
-            localStorage.removeItem(key)
-            break
-        }
-    }
-}
-
 removeNote = (id) => {
     console.log(id)
     let button = document.getElementById(id)
