@@ -64,8 +64,6 @@ createNote = (text) => {
         <button id="delete-all" onclick=deleteAll()>Delete All</button>
         `
 
-        if (form.innerHTML == null)
-            form.innerHTML = ''
         form.innerHTML += template
         first = false
     } else if (count == 0) {
