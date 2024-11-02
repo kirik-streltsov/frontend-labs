@@ -2,13 +2,33 @@ let noteID = 1
 let count = 0
 let first = true
 
+sanitizeNote = (note) => {
+    return note.replaceAll('  ', ' ').replaceAll('\n', ' ').trim()
+}
+
 removeNote = (id) => {
     console.log(id)
     let button = document.getElementById(id)
     let div = button.parentNode
     let container = div.parentNode
+
+    let noteContentId = 'note-content-' + id.split('-')[1]
+    let noteContent = sanitizeNote(document.getElementById(noteContentId).innerText)
+
     container.removeChild(div)
-    localStorage.removeItem(id)
+
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i)
+        let note = sanitizeNote(localStorage.getItem(key))
+        console.log(note)
+        console.log(noteContent)
+        console.log(note === noteContent)
+        if (note === noteContent) {
+            console.log('must have deleted')
+            localStorage.removeItem(key)
+            break
+        }
+    }
     count--
     if (count == 0) {
         let form = document.getElementById('note-form')
@@ -36,17 +56,24 @@ createNote = (text) => {
 
     let template = 
     `
-    <div id="note-${noteID}">
-        <p>${text}</p>
+    <div id="note-${noteID}" class="added">
+        <p id="note-content-${noteID}">${text}</p>
         <button id="button-${noteID}" onclick=removeNote(this.id)>🗑️</button>
     </div>
     `
 // 🗑️
     container.innerHTML = template + container.innerHTML
+    
+    let createdNote = document.getElementById(`note-${noteID}`)
+    createdNote.addEventListener('animationend', () => {
+        // removing '.added' class from all elements because id counter changes
+        // and thus only the first node is the one who gets its class removed
+        document.querySelectorAll(".added").forEach((it) => it.removeAttribute('class'))
+    })
+
     document.getElementById('note-input').value = ''
     noteID++
     count++
-
     if (first) {
         let form = document.getElementById('note-form')
         let template = 
