@@ -277,11 +277,19 @@ form {
     font-weight: 500;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 #notes-container {
+    all: unset;
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-height: 65vh;
+    /* margin-bottom: 20px; */
     margin-top: 20px;
+    overflow-y: auto;
 }
 
 #notes-container div {
@@ -314,6 +322,20 @@ form {
     background-color: #D80032;
     border-radius: 8px;
     text-align: center;
+}
+
+.added {
+    opacity: 0;
+    animation: add 0.5s ease forwards;
+    transform: translateX(70px);
+    transform-origin: left;
+}
+
+@keyframes add {
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 @keyframes appear {

@@ -56,17 +56,24 @@ createNote = (text) => {
 
     let template = 
     `
-    <div id="note-${noteID}">
+    <div id="note-${noteID}" class="added">
         <p id="note-content-${noteID}">${text}</p>
         <button id="button-${noteID}" onclick=removeNote(this.id)>🗑️</button>
     </div>
     `
 // 🗑️
     container.innerHTML = template + container.innerHTML
+    
+    let createdNote = document.getElementById(`note-${noteID}`)
+    createdNote.addEventListener('animationend', () => {
+        // removing '.added' class from all elements because id counter changes
+        // and thus only the first node is the one who gets its class removed
+        document.querySelectorAll(".added").forEach((it) => it.removeAttribute('class'))
+    })
+
     document.getElementById('note-input').value = ''
     noteID++
     count++
-
     if (first) {
         let form = document.getElementById('note-form')
         let template = 
