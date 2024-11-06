@@ -430,19 +430,23 @@ form {
         flex-direction: column;
         width: 250px !important;
         gap: 10px;
+        margin-left: 0;
     }
     
     #note-submit {
         width: 250px !important;
+        margin-left: 0 !important;
     }
     
     #delete-all {
         height: 40px;
         width: 240px !important;
+        margin-left: 0;
     }
 
     #save-note-to-ls {
         width: 240px !important;
+        margin-left: 0;
     }
 
     #notes-container div {
@@ -451,7 +455,6 @@ form {
 
     #input {
         width: 250px !important;
-        margin-left: 10px;
     }
 }
 
