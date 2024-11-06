@@ -428,19 +428,30 @@ form {
 
     #note-form {
         flex-direction: column;
+        width: 330px !important;
         gap: 10px;
     }
     
     #note-submit {
-        width: 440px !important;
+        width: 330px !important;
     }
     
     #delete-all {
         height: 40px;
+        width: 320px !important;
+    }
+
+    #save-note-to-ls {
+        width: 320px !important;
     }
 
     #notes-container div {
-        width: 440px !important;
+        width: 330px !important;
+    }
+
+    #input {
+        width: 330px !important;
+        margin-left: 10px;
     }
 }
 
