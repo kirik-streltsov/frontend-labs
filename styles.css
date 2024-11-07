@@ -90,7 +90,6 @@ nav ul li a.menu_item:hover {
 
 html, body {
     height: 100%;
-    min-height: stretch;
     width: 100%;
     margin: 0;
     padding: 0;
