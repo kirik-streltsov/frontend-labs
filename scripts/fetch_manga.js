@@ -24,8 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .catch(err => {
             loader.remove()
-            mangaGrid.style.display = 'flex'
-            mangaGrid.innerHTML = '<p style="color: white; font-weight: 500; justify-self: center">Could not find any manga :(</p>'
+            Toastify({
+                text: "Could not find any manga :(",
+                duration: 3000,
+                style: {
+                    background: "#D80032",
+                },
+                gravity: "bottom",
+            }).showToast()
             console.log(err)
         })
         .then(json => json.slice(1, 17).forEach(element => {
