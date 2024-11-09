@@ -99,11 +99,14 @@ saveToLocalStorage = () => {
     let text = document.getElementById('note-input').value
     createNote(text)
     localStorage.setItem((noteID - 1) + '', text)
-    for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i)
-        let note = localStorage.getItem(key)
-        console.log(note)
-    }
+    Toastify({
+        text: "Saved note to local storage",
+        duration: 3000,
+        gravity: "bottom",
+        style: {
+            background: "#44b880",
+        }
+    }).showToast()
 }
 
 createNotesFromLocalStorage = () => {
