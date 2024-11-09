@@ -1,8 +1,8 @@
-let generateView = (imgSrc, mangaName) => {
+let generateView = (link, imgSrc, mangaName) => {
     let template = 
     `
     <div>
-        <a href="#">
+        <a href="${link}" class="manga-link">
             <img src="${imgSrc}" alt="Manga">
             <div class="span-container">
                 <span>${mangaName}</span>
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(err)
         })
         .then(json => json.slice(1, 17).forEach(element => {
-            let view = generateView(element["thumbnailUrl"], element["title"])
+            let view = generateView(element["url"], element["thumbnailUrl"], element["title"])
             mangaGrid.appendChild(view)
             loader.remove()
         }));

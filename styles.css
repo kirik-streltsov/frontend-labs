@@ -145,6 +145,10 @@ html, body {
     position: relative;
 }
 
+.manga-link {
+    display: contents;
+}
+
 .span-container span {
     width: 100%;
     color: #fff;
