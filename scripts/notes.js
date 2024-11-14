@@ -1,104 +1,101 @@
-let noteID = 1
-let count = 0
-let first = true
+let noteID = 1;
+let count = 0;
+let first = true;
 
 sanitizeNote = (note) => {
-    return note.replaceAll('  ', ' ').replaceAll('\n', ' ').trim()
-}
+    return note.replaceAll('  ', ' ').replaceAll('\n', ' ').trim();
+};
 
 removeNote = (id) => {
-    console.log(id)
-    let button = document.getElementById(id)
-    let div = button.parentNode
-    let container = div.parentNode
+    console.log(id);
+    let button = document.getElementById(id);
+    let div = button.parentNode;
+    let container = div.parentNode;
 
-    let noteContentId = 'note-content-' + id.split('-')[1]
-    let noteContent = sanitizeNote(document.getElementById(noteContentId).innerText)
+    let noteContentId = 'note-content-' + id.split('-')[1];
+    let noteContent = sanitizeNote(document.getElementById(noteContentId).innerText);
 
-    container.removeChild(div)
+    container.removeChild(div);
 
     for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i)
-        let note = sanitizeNote(localStorage.getItem(key))
-        console.log(note)
-        console.log(noteContent)
-        console.log(note === noteContent)
+        let key = localStorage.key(i);
+        let note = sanitizeNote(localStorage.getItem(key));
+        
         if (note === noteContent) {
-            console.log('must have deleted')
-            localStorage.removeItem(key)
-            break
+            localStorage.removeItem(key);
+            break;
         }
     }
-    count--
+    count--;
     if (count == 0) {
-        let form = document.getElementById('note-form')
-        let deleteAllButton = document.getElementById('delete-all')
-        form.removeChild(deleteAllButton)
-        first = true
+        let form = document.getElementById('note-form');
+        let deleteAllButton = document.getElementById('delete-all');
+        form.removeChild(deleteAllButton);
+        first = true;
     }
-}
+};
 
 deleteAll = () => {
-    let container = document.getElementById('notes-container')
-    container.innerHTML = ''
-    count = 0
-    let form = document.getElementById('note-form')
-    let deleteAllButton = document.getElementById('delete-all')
-    form.removeChild(deleteAllButton)
-    localStorage.clear()
-    first = true
-}
+    let container = document.getElementById('notes-container');
+    container.innerHTML = '';
+    count = 0;
+    let form = document.getElementById('note-form');
+    let deleteAllButton = document.getElementById('delete-all');
+    form.removeChild(deleteAllButton);
+    localStorage.clear();
+    first = true;
+};
 
 createNote = (text) => {
-    let container = document.getElementById('notes-container')
+    let container = document.getElementById('notes-container');
     
-    if (text == '') return
+    if (text === '') return;
 
-    let template = 
-    `
-    <div id="note-${noteID}" class="added">
-        <p id="note-content-${noteID}">${text}</p>
-        <button id="button-${noteID}" onclick=removeNote(this.id)>🗑️</button>
-    </div>
-    `
-// 🗑️
-    container.innerHTML = template + container.innerHTML
-    
-    let createdNote = document.getElementById(`note-${noteID}`)
-    createdNote.addEventListener('animationend', () => {
+    let template = document.getElementById('note-template');
+    let element = document.createElement('div');
+    element.append(template.content.cloneNode(true));
+    element.addEventListener('animationend', () => {
         // removing '.added' class from all elements because id counter changes
         // and thus only the first node is the one who gets its class removed
-        document.querySelectorAll(".added").forEach((it) => it.removeAttribute('class'))
-    })
+        document.querySelectorAll(".added").forEach((it) => it.removeAttribute('class'));
+    });
+    element.setAttribute('class', 'added');
+    element.setAttribute('id', 'note-' + noteID);
+    element.querySelector('p').setAttribute('id', "note-content-" + noteID);
+    element.querySelector('button').setAttribute('id', 'button-' + noteID);
+    element.querySelector('p').innerText = text;
+// 🗑️
+    container.appendChild(element);
 
-    document.getElementById('note-input').value = ''
-    noteID++
-    count++
+    document.getElementById('note-input').value = '';
+    noteID++;
+    count++;
     if (first) {
-        let form = document.getElementById('note-form')
-        let template = 
-        `
-        <button id="delete-all" onclick=deleteAll()>Delete All</button>
-        `
+        let form = document.getElementById('note-form');
+        let button = document.createElement('button');
+        button.setAttribute('id', 'delete-all');
+        button.addEventListener('click', () => deleteAll());
+        button.innerText = 'Delete All';
 
-        form.innerHTML += template
-        first = false
+        form.appendChild(button);
+        first = false;
     } else if (count == 0) {
-        let form = document.getElementById('note-form')
-        let button = document.getElementById('delete-all')
-        form.removeChild(button)
+        let form = document.getElementById('note-form');
+        let button = document.getElementById('delete-all');
+        form.removeChild(button);
     }
-}
+};
 
 createNoteFromForm = () => {
-    let text = document.getElementById('note-input').value
-    createNote(text)
-}
+    let text = document.getElementById('note-input').value;
+    createNote(text);
+};
 
 saveToLocalStorage = () => {
-    let text = document.getElementById('note-input').value
-    createNote(text)
-    localStorage.setItem((noteID - 1) + '', text)
+    let text = document.getElementById('note-input').value;
+    if (text === '') return;
+    createNote(text);
+    localStorage.setItem((noteID - 1) + '', text);
     Toastify({
         text: "Saved note to local storage",
         duration: 3000,
@@ -106,15 +103,15 @@ saveToLocalStorage = () => {
         style: {
             background: "#44b880",
         }
-    }).showToast()
-}
+    }).showToast();
+};
 
 createNotesFromLocalStorage = () => {
     for (let i = 0; i < localStorage.length; i++) {
-        let key = localStorage.key(i)
-        let note = localStorage.getItem(key)
-        createNote(note)
+        let key = localStorage.key(i);
+        let note = localStorage.getItem(key);
+        createNote(note);
     }
-}
+};
 
-document.addEventListener('DOMContentLoaded', createNotesFromLocalStorage())
+document.addEventListener('DOMContentLoaded', createNotesFromLocalStorage());

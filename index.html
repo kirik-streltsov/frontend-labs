@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
         <script src="scripts/load_time.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-        <script src="scripts/fetch_manga.js"></script>
+        <script src="scripts/fetch_manga.js" defer></script>
     </head>
     <body>
         <div class="container">
@@ -32,6 +32,14 @@
             <div class="content">
                 <div class="loader"><div></div></div>
                 <div class="table-container" id="manga-grid">
+                    <template id="manga-template">
+                        <a class="manga-link">
+                            <img alt="Manga">
+                            <div class="span-container">
+                                <span></span>
+                            </div>
+                        </a>
+                    </template>
                 </div>
                 <div class="load_time_container"><span id="load_time"></span></div>
             </div>

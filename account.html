@@ -39,7 +39,12 @@
                         <button id="save-note-to-ls" onclick="saveToLocalStorage()">Save To Local Storage</button>
                     </form>
                 </div>
-                <div id="notes-container"></div>
+                <div id="notes-container">
+                    <template id="note-template">
+                        <p></p>
+                        <button onclick="removeNote(this.id)">🗑️</button>
+                    </template>
+                </div>
             </div>
         </div>
         <script src="scripts/notes.js"></script>
